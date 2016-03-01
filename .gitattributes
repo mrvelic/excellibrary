@@ -42,7 +42,6 @@
 *.fsx -text
 *.hs -text
 
-*.csproj -text merge=union 
 *.vbproj -text merge=union 
 *.fsproj -text merge=union 
 *.dbproj -text merge=union 
