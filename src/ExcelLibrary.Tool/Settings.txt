@@ -1,2 +1,0 @@
-string DataFolder
-string CodeFolder
