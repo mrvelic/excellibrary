@@ -32,20 +32,20 @@ namespace ExcelLibrary.CompoundDocumentFormat
         private void InitializeMasterSectorAllocationTable()
         {
             this.MasterSectorAllocationTable = new List<int>(NumberOfSecIDs);
-            SelectSIDs(Document.Header.MasterSectorAllocationTable);
+            SelectSIDs(Document.Header.MasterSectorAllocationTable, 0);
             int msid = Document.Header.FirstSectorIDofMasterSectorAllocationTable;
             while (msid != SID.EOC)
             {
                 CurrentMSATSector = msid;
                 int[] SIDs = Document.ReadSectorDataAsIntegers(msid);
-                SelectSIDs(SIDs);
+                SelectSIDs(SIDs, 1);
                 msid = SIDs[SIDs.Length - 1];
             }
         }
 
-        private void SelectSIDs(int[] SIDs)
+        private void SelectSIDs(int[] SIDs, int reduce_)
         {
-            for (int i = 0; i < SIDs.Length; i++)
+            for (int i = 0; i < (SIDs.Length - reduce_); i++)
             {
                 int sid = SIDs[i];
                 if (MasterSectorAllocationTable.Count < NumberOfSecIDs)
