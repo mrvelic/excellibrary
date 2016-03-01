@@ -9,6 +9,18 @@ using ExcelLibrary.BinaryDrawingFormat;
 
 namespace ExcelLibrary.SpreadSheet
 {
+    public enum WorkbookDateMode
+    {
+        /// <summary>
+        /// 1900 Date System
+        /// </summary>
+        Windows = 0,
+        /// <summary>
+        /// 1904 Date System
+        /// </summary>
+        Macintosh = 1
+    }
+
     public class Workbook
     {
         public List<Worksheet> Worksheets = new List<Worksheet>();
@@ -16,6 +28,8 @@ namespace ExcelLibrary.SpreadSheet
         public MSODRAWINGGROUP DrawingGroup;
 
         public List<Record> Records;
+
+        public WorkbookDateMode DateMode = WorkbookDateMode.Windows;
 
         /// <summary>
         /// Load workbook from a file path.

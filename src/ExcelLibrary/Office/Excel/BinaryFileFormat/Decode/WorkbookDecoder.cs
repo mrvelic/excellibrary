@@ -102,10 +102,10 @@ namespace ExcelLibrary.BinaryFileFormat
                         switch (dateMode.Mode)
                         {
                             case 0:
-                                sharedResource.BaseDate = DateTime.Parse("1899-12-31");
+                                sharedResource.BaseDate = Constants.WindowsBaseDate;
                                 break;
                             case 1:
-                                sharedResource.BaseDate = DateTime.Parse("1904-01-01");
+                                sharedResource.BaseDate = Constants.MacintoshBaseDate;
                                 break;
                         }
                         break;

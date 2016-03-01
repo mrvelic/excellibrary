@@ -48,8 +48,18 @@ namespace ExcelLibrary.BinaryFileFormat
             book_records.Add(window);
 
             DATEMODE dateMode = new DATEMODE();
-            dateMode.Mode = 1;
-            sharedResource.BaseDate = DateTime.Parse("1904-01-01");
+            dateMode.Mode = (Int16)workbook.DateMode;
+
+            if(workbook.DateMode == WorkbookDateMode.Windows)
+            {
+                sharedResource.BaseDate = Constants.WindowsBaseDate;
+            }
+
+            if(workbook.DateMode == WorkbookDateMode.Macintosh)
+            {
+                sharedResource.BaseDate = Constants.MacintoshBaseDate;
+            }
+
             book_records.Add(dateMode);
 
             List<List<Record>> all_sheet_records = new List<List<Record>>();

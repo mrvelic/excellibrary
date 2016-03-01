@@ -18,7 +18,7 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -33,6 +33,7 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -149,6 +150,7 @@
     <Compile Include="Office\Excel\BinaryDrawingFormat\Extended\MsofbtSp.cs" />
     <Compile Include="Office\Excel\BinaryDrawingFormat\ShapeProperty.cs" />
     <Compile Include="Office\Excel\BinaryFileFormat\ColorPalette.cs" />
+    <Compile Include="Office\Excel\BinaryFileFormat\Constants.cs" />
     <Compile Include="Office\Excel\BinaryFileFormat\Decode\StringDecoder.cs" />
     <Compile Include="Office\Excel\BinaryFileFormat\Decode\WorkbookDecoder.cs" />
     <Compile Include="Office\Excel\BinaryFileFormat\Decode\WorksheetDecoder.cs" />
