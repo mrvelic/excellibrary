@@ -118,18 +118,18 @@ namespace ExcelLibrary.BinaryFileFormat
             }
             else if (value is decimal)
             {
-                if (Math.Abs((decimal)value) <= (decimal)5368709.11)
-                {
-                    RK rk = new RK();
-                    rk.Value = (uint)((int)((decimal)value * 100) << 2 | 3); // integer and mul
-                    return rk;
-                }
-                else
-                {
+                //if (Math.Abs((decimal)value) <= (decimal)5368709.11)
+                //{
+                //    RK rk = new RK();
+                //    rk.Value = (uint)((int)((decimal)value * 100) << 2 | 3); // integer and mul
+                //    return rk;
+                //}
+                //else
+                //{
                     NUMBER number = new NUMBER();
                     number.Value = (double)(decimal)value;
                     return number;
-                }
+                //}
             }
             else if (value is double)
             {
