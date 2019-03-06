@@ -63,13 +63,12 @@ namespace ExcelLibrary.Test
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentException))]
         public void EmptyDataSetCreateTest()
         {
             string tempFilePath = Path.GetTempFileName();
             DataSet ds = new DataSet();
 
-            DataSetHelper.CreateWorkbook(tempFilePath, ds);
+            Assert.That(() => DataSetHelper.CreateWorkbook(tempFilePath, ds), Throws.TypeOf<ArgumentException>());
         }
 
     }

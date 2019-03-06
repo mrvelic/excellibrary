@@ -1,0 +1,17 @@
+version: '{build}'
+skip_tags: true
+image: Visual Studio 2017
+configuration: Release
+install:
+  - ps: mkdir -Force ".\build\" | Out-Null
+build_script:
+- ps: ./Build.ps1
+test: on
+artifacts:
+- path: artifacts/ExcelLibrary.*.nupkg
+only_commits:
+  files:
+    - ExcelLibrary.sln
+    - src/ExcelLibrary/
+    - src/ExcelLibrary.Tests/
+    - Build.ps1

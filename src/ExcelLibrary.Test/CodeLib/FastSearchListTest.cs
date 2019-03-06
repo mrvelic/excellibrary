@@ -40,13 +40,12 @@ namespace ExcelLibrary.Test.CodeLib
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentException))]
         public void InsertDuplicateTest()
         {
             IList<String> list = new FastSearchList<String>();
 
             list.Add("Item 1");
-            list.Insert(1, "Item 1");
+            Assert.That(() => list.Insert(1, "Item 1"), Throws.TypeOf<ArgumentException>());
         }
 
 
