@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
     <PackageProjectUrl>http://code.google.com/p/excellibrary/</PackageProjectUrl>
     <VersionPrefix>2.0.0</VersionPrefix>
     <OutputType>Library</OutputType>
